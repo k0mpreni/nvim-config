@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/Users/alex.labonne/Documents/Projects/motorrad-dialog/app/reactApp/src/berechnen/components/AddItem'
+let g:netrw_dirhist_3='/Users/alex.labonne/Documents/Projects/motorrad-dialog/app/reactApp/src/berechnen/components'
+let g:netrw_dirhist_2='/Users/alex.labonne/Documents/Projects/motorrad-dialog/app/reactApp/src/berechnen'
+let g:netrw_dirhist_1='/Users/alex.labonne/Documents/Projects/motorrad-dialog/app/reactApp/src'
+let g:netrw_dirhist_0='/Users/alex.labonne/Documents/Projects/motorrad-dialog/app/reactApp'
+let g:netrw_dirhist_9='/Users/alex.labonne/Documents/Projects/motorrad-dialog/app'
+let g:netrw_dirhist_8='/Users/alex.labonne/Documents/Projects/motorrad-dialog'
+let g:netrw_dirhist_7='/Users/alex.labonne/.config/nvim'
+let g:netrw_dirhist_6='/Users/alex.labonne/Documents/Projects/motorrad-dialog'
+let g:netrw_dirhist_5='/Users/alex.labonne/Downloads/check24-develop-kfzdialog/kfzdialog'
