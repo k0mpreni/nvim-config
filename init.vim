@@ -13,6 +13,8 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
 call plug#end() 
 
 
