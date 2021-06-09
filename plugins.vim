@@ -1,8 +1,15 @@
-let g:ale_disable_lsp = 1
-let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
+"let g:ale_disable_lsp = 1
+let b:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typscript': ['prettier', 'eslint']}
+let b:alex_linters = {'javascript': ['prettier', 'eslint'], 'typscript': ['prettier', 'eslint']}
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = '◉'
 let g:ale_sign_warning = '⚠'
+
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 3
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
 
 set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
@@ -29,4 +36,5 @@ let g:compe.source.nvim_lsp = v:true
 let g:compe.source.nvim_lua = v:true
 let g:compe.source.vsnip = v:true
 
-inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+let $FZF_DEFAULT_OPS='--reverse'

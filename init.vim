@@ -15,16 +15,14 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
+Plug 'stsewd/fzf-checkout.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end() 
 
 
 set termguicolors
 colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE
-
-lua << EOF
-require'lspconfig'.gopls.setup{on_attach=on_attach}
-EOF
 
 "-------------------Load files-----------------
 source ~/.config/nvim/base.vim
