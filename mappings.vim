@@ -4,6 +4,8 @@ nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 nnoremap <C-j> :cprev<CR>
 nnoremap <C-k> :cnext<CR>
 xnoremap <leader>p "_dP<CR>
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
 nnoremap <leader>y "+y
 xnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
@@ -42,3 +44,7 @@ nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 nmap -- :tabedit %<CR>:Gdiff<CR>
 
+noremap <Leader><Leader>fp :ALEFix eslint<CR>
+noremap <Leader><Leader>f :ALEFix eslint<CR>
+nmap <silent> <leader>aj :ALENext<cr>
+nmap <silent> <leader>ak :ALEPrevious<cr>

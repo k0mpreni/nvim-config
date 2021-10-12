@@ -22,3 +22,4 @@ require'lspconfig'.gopls.setup{on_attach=on_attach}
 
 require'lspconfig'.svelte.setup{}
 
+require'lspconfig'.jsonls.setup{}

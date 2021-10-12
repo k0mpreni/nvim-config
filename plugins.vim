@@ -1,7 +1,10 @@
-"let g:ale_disable_lsp = 1
-let b:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typscript': ['prettier', 'eslint']}
-let b:alex_linters = {'javascript': ['prettier', 'eslint'], 'typscript': ['prettier', 'eslint']}
+" let g:ale_disable_lsp = 1
+let g:ale_fixers = ['prettier', 'eslint']
+let g:ale_linters = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'eslint'], 'json': ['prettier']}
 let g:ale_fix_on_save = 1
+let g:ale_fix_on_enter = 1
+let g:ale_fix_on_insert_leave = 1 
+let g:ale_fix_on_text_changed = 1
 let g:ale_sign_error = '◉'
 let g:ale_sign_warning = '⚠'
 
