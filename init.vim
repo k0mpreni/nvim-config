@@ -19,6 +19,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'dense-analysis/ale'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+Plug 'rhysd/devdocs.vim'
 call plug#end() 
 
 
