@@ -23,6 +23,7 @@ noremap <leader>pb :lua require('telescope.builtin').buffers()<CR>
 nnoremap <leader>vh :lua require('telescope.builtin').help_tags()<CR>
 
 nnoremap <leader>vd :tab :lua vim.lsp.buf.definition()<CR>
+nnoremap <leader>vf :tab :lua vim.lsp.buf.formatting()<CR>
 nnoremap <leader>vi :tab :lua vim.lsp.buf.implementation()<CR>
 nnoremap <leader>vsh :lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>vrr :lua vim.lsp.buf.references()<CR>
@@ -37,14 +38,7 @@ nmap <leader>gs :tab :G<CR>
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
 
-inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 nmap -- :tabedit %<CR>:Gdiff<CR>
-
-noremap <Leader><Leader>fp :ALEFix eslint<CR>
-noremap <Leader><Leader>f :ALEFix eslint<CR>
-nmap <silent> <leader>aj :ALENext<cr>
-nmap <silent> <leader>ak :ALEPrevious<cr>
