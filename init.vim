@@ -25,12 +25,14 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 Plug 'rhysd/devdocs.vim'
+Plug 'junegunn/goyo.vim'
 call plug#end() 
 
-
 set termguicolors
+set background=dark
+let g:gruvbox_termcolors = 256
+let g:gruvbox_contrast_dark = 'soft'
 colorscheme gruvbox
-hi Normal guibg=NONE ctermbg=NONE
 
 "-------------------Load files-----------------
 source ~/.config/nvim/base.vim
