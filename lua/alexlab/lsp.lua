@@ -1,15 +1,15 @@
-local nvim_lsp = require("lspconfig")
+local lspconfig = require("lspconfig")
 
 -- Setup nvim-cmp.
 local cmp = require 'cmp'
 
-require'lspconfig'.gopls.setup {
+lspconfig.gopls.setup {
     on_attach = on_attach
 }
 
-require'lspconfig'.svelte.setup {}
+lspconfig.svelte.setup {}
 
-require'lspconfig'.jsonls.setup {}
+lspconfig.jsonls.setup {}
 
 cmp.setup({
     snippet = {
@@ -35,7 +35,7 @@ cmp.setup({
         })
     },
     sources = {{
-        name = 'nvim_lsp'
+        name = 'lspconfig'
     }, -- For vsnip user.
     {
         name = 'vsnip'
@@ -54,10 +54,7 @@ local function config(_config)
     }, _config or {})
 end
 
-require("null-ls").config {}
-require("lspconfig")["null-ls"].setup {}
-
-require'lspconfig'.tsserver.setup {
+lspconfig.tsserver.setup {
     on_attach = function(client)
         client.resolved_capabilities.document_formatting = false
         client.resolved_capabilities.document_range_formatting = false
@@ -97,8 +94,8 @@ require'lspconfig'.tsserver.setup {
             watch_dir = nil,
 
             -- filter diagnostics
-            filter_out_diagnostics_by_severity = {},
-            filter_out_diagnostics_by_code = {}
+            filter_out_diagnostics_by_severity = {"hint"},
+            filter_out_diagnostics_by_code = {80001}
         }
 
         -- required to fix code action ranges and filter diagnostics
@@ -114,6 +111,10 @@ require'lspconfig'.tsserver.setup {
         vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", opts)
         vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
     end,
-    capabilities = capabilities,
+    capabilities = capabilities
 }
 
+local null_ls = require("null-ls")
+null_ls.config({})
+
+require("lspconfig")["null-ls"].setup({})
