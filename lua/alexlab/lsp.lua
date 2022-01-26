@@ -106,7 +106,7 @@ lspconfig.tsserver.setup {
             silent = true
         }
 
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", opts)
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "go", ":TSLspOrganize<CR>", opts)
         vim.api.nvim_buf_set_keymap(bufnr, "n", "gf", ":Formatting<CR>", opts)
         vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", opts)
         vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
@@ -115,6 +115,11 @@ lspconfig.tsserver.setup {
 }
 
 local null_ls = require("null-ls")
-null_ls.config({})
+null_ls.setup({
+sources = {
+        null_ls.builtins.diagnostics.eslint, -- eslint or eslint_d
+        null_ls.builtins.code_actions.eslint, -- eslint or eslint_d
+        null_ls.builtins.formatting.prettier -- prettier, eslint, eslint_d, or prettierd
+    },
+})
 
-require("lspconfig")["null-ls"].setup({})

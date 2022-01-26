@@ -26,6 +26,9 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 Plug 'rhysd/devdocs.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'szw/vim-maximizer'
+Plug 'puremourning/vimspector'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 call plug#end() 
 
 set termguicolors
