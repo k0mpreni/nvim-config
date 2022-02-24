@@ -4,7 +4,8 @@ local lspconfig = require("lspconfig")
 local cmp = require 'cmp'
 
 lspconfig.gopls.setup {
-    on_attach = on_attach
+    on_attach = on_attach,
+    capabilities = capabilities
 }
 
 lspconfig.svelte.setup {}
