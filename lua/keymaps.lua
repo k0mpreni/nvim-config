@@ -47,6 +47,18 @@ map('n', '<C-q>', ':q<cr>', options)
 
 
 wk.register({
+    ["w"] = { "<cmd>w!<CR>", "Save" },
+    ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+    ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
+    p = {
+        name = "Packer",
+        c = { "<cmd>PackerCompile<cr>", "Compile" },
+        i = { "<cmd>PackerInstall<cr>", "Install" },
+        -- r = { "<cmd>lua require('lvim.plugin-loader').recompile()<cr>", "Re-compile" },
+        s = { "<cmd>PackerSync<cr>", "Sync" },
+        S = { "<cmd>PackerStatus<cr>", "Status" },
+        u = { "<cmd>PackerUpdate<cr>", "Update" },
+      },
     f = {
         name = "find", -- optional group name
         w = {"<cmd>Telescope live_grep<cr>", "Find Word"},
@@ -60,16 +72,38 @@ wk.register({
         i = {vim.lsp.buf.implementation, "See implementation"},
         s = {
             h = {vim.lsp.buf.signature_help, "See signature help"},
-            d = {vim.lsp.diagnostic.show_line_diagnostics, "See line diagnostics"}
         },
         r = {
             r = {vim.lsp.buf.references, "Buffer references"},
             n = {vim.lsp.buf.rename, "Buffer Rename"}
         },
         h = {vim.lsp.buf.hover, "Hover"},
-        a = {vim.lsp.buf.code_action, "Code action"},
-        n = {vim.diagnostic.goto_next, "Go to next diagnostic"}
-    }
+    },
+    l = {
+        name = "LSP",
+        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+        d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
+        w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
+        i = { "<cmd>LspInfo<cr>", "Info" },
+        I = { "<cmd>Mason<cr>", "Mason Info" },
+        j = {
+          vim.diagnostic.goto_next,
+          "Next Diagnostic",
+        },
+        k = {
+          vim.diagnostic.goto_prev,
+          "Prev Diagnostic",
+        },
+        l = { vim.lsp.codelens.run, "CodeLens Action" },
+        q = { vim.diagnostic.setloclist, "Quickfix" },
+        r = { vim.lsp.buf.rename, "Rename" },
+        s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+        S = {
+          "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+          "Workspace Symbols",
+        },
+        e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
+      },
 }, {
     prefix = "<leader>"
 })
